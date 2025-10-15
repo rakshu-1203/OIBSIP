@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rikshita Shetty Portfolio</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header h1 { color: #3b82f6; font-size: 28px; font-weight: 700; }
+
+  nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  nav a:hover { color: #3b82f6; }
+
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    gap: 50px;
+    animation: fadeInUp 1.5s ease-out;
+  }
+
+  .hero img {
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    animation: float 5s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .hero-content { max-width: 500px; }
+
+  .hero-content h2 { font-size: 40px; margin-bottom: 20px; color: #222; }
+  .hero-content span { color: #3b82f6; }
+
+  .hero-content p { margin-bottom: 20px; line-height: 1.6; }
+
+  .btn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+
+  .btn:hover { background-color: #2563eb; }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .quote {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #e0f2fe;
+    font-style: italic;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 60px;
+    text-align: center;
+  }
+
+  .stat-box {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 30px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
+
+  .stat-box:nth-child(1) { animation-delay: 0.2s; }
+  .stat-box:nth-child(2) { animation-delay: 0.4s; }
+  .stat-box:nth-child(3) { animation-delay: 0.6s; }
+
+  .stat-box h3 { color: #3b82f6; font-size: 36px; margin-bottom: 10px; }
+
+  section.content-section {
+    display: none;
+    padding: 60px 20px;
+    background-color: #fefefe;
+    animation: fadeInUp 0.8s ease-in-out;
+  }
+
+  section.content-section.active { display: block; }
+
+  .content-section h2 { color: #3b82f6; margin-bottom: 30px; }
+
+  .project-card, .skill-item, .contact-info {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    background-color: #3b82f6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Rikshita Shetty</h1>
+    <nav>
+      <a onclick="showSection('projects')">Projects</a>
+      <a onclick="showSection('skills')">Skills</a>
+      <a onclick="showSection('contact')">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80" alt="Rikshita portrait">
+    <div class="hero-content">
+      <h2>Hi, I'm <span>Rikshita Shetty</span></h2>
+      <p>A passionate Information Science and Engineering student based in Bangalore. I love creating efficient solutions with clean code and engaging user experiences.</p>
+      <button class="btn" onclick="showSection('projects')">View My Projects</button>
+    </div>
+  </section>
+
+  <section class="quote">
+    <p>“Technology is best when it brings people together.”</p>
+    <p style="margin-top:10px; color:#2563eb; font-weight:600;">– Rikshita Shetty</p>
+  </section>
+
+  <section class="stats">
+    <div class="stat-box"><h3>8+</h3><p>Projects Completed</p></div>
+    <div class="stat-box"><h3>3</h3><p>Internships</p></div>
+    <div class="stat-box"><h3>4</h3><p>Years of Learning</p></div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="content-section">
+    <h2>My Projects</h2>
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>Created a responsive portfolio website using HTML, CSS, and JavaScript.</p>
+    </div>
+    <div class="project-card">
+      <h3>Quiz Application</h3>
+      <p>Developed an interactive quiz app in Java Swing with MySQL integration.</p>
+    </div>
+    <div class="project-card">
+      <h3>Python Calculator</h3>
+      <p>Built a GUI calculator using Python and Tkinter for basic arithmetic operations.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="content-section">
+    <h2>My Skills</h2>
+    <div class="skill-item"><strong>Programming:</strong> Java, Python, C++</div>
+    <div class="skill-item"><strong>Web Development:</strong> HTML, CSS, JavaScript</div>
+    <div class="skill-item"><strong>Database:</strong> MySQL, SQLite</div>
+    <div class="skill-item"><strong>Tools:</strong> Git, VS Code, Eclipse</div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="content-section">
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      <p><strong>Email:</strong> rikshita.shetty@example.com</p>
+      <p><strong>Phone:</strong> +91 9876543210</p>
+      <p><strong>Location:</strong> Bangalore, India</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Rikshita Shetty. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+      window.scrollTo({ top: document.getElementById(sectionId).offsetTop - 60, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
